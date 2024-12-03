@@ -1,0 +1,98 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #2ecc71;
+  --background-color: #f4f6f8;
+  --card-background: #ffffff;
+  --border-color: #e0e6ed;
+  --text-color: #2c3e50;
+  --subtle-shadow: rgba(0, 0, 0, 0.1);
+}
+
+.admin-module {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: var(--background-color);
+}
+
+.admin-module h1 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2.7rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.company-management,
+.communication-method-management {
+  background-color: var(--card-background);
+  border-radius: 16px;
+  padding: 35px;
+  margin-bottom: 35px;
+  box-shadow: 0 15px 40px var(--subtle-shadow);
+  border: 1px solid var(--border-color);
+}
+
+.admin-module form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.admin-module form input,
+.admin-module form textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  background-color: #f9fafb;
+}
+
+.admin-module form input:focus,
+.admin-module form textarea:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+  outline: none;
+}
+
+.admin-module button {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 14px 25px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.admin-module button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+.company-list,
+.communication-methods-list {
+  background-color: var(--card-background);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 10px 30px var(--subtle-shadow);
+  border: 1px solid var(--border-color);
+}
+
+.company-item,
+.method-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+@media (max-width: 768px) {
+  .admin-module form {
+    grid-template-columns: 1fr;
+  }
+}

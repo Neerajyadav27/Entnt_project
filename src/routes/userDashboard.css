@@ -1,0 +1,229 @@
+:root {
+  /* New Color Palette */
+  --primary-color: #1a73e8;
+  --secondary-color: #4285f4;
+  --background-light: #f1f3f4;
+  --text-color: #202124;
+  --overdue-color: #d93025;
+  --due-today-color: #fbbc05;
+  --normal-color: #34a853;
+  --accent-color: #ea4335;
+
+  /* Transitions */
+  --transition-speed: 0.3s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Google Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-light);
+}
+
+.user-dashboard {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: 
+    "header notifications"
+    "main notifications";
+}
+
+.user-dashboard h1 {
+  grid-area: header;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+/* Notifications Section */
+.notifications {
+  grid-area: notifications;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-left: 1rem;
+  border-left: 4px solid var(--secondary-color);
+  max-width: 250px;
+  align-self: start;
+  position: sticky;
+  top: 2rem;
+}
+
+.notifications h2,
+.notifications h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.overdue-communications {
+  background-color: rgba(217, 48, 37, 0.05);
+  border-radius: 6px;
+  padding: 0.5rem;
+}
+
+.overdue-item {
+  color: var(--overdue-color);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.overdue-item::before {
+  content: "⚠️";
+  display: inline-block;
+}
+
+/* Companies Grid */
+.companies-grid {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.company-row {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: all var(--transition-speed) ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.company-row:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Status Color Coding */
+.company-row.overdue {
+  border-left: 4px solid var(--overdue-color);
+  background-color: rgba(217, 48, 37, 0.05);
+}
+
+.company-row.due-today {
+  border-left: 4px solid var(--due-today-color);
+  background-color: rgba(251, 188, 5, 0.05);
+}
+
+.company-row.normal {
+  border-left: 4px solid var(--normal-color);
+  background-color: rgba(52, 168, 83, 0.05);
+}
+
+/* Log Communication Button */
+.log-communication-btn {
+  grid-area: main;
+  justify-self: center;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color var(--transition-speed) ease;
+  margin-top: 1rem;
+}
+
+.log-communication-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.log-communication-btn:disabled {
+  background-color: #e0e0e0;
+  color: #9e9e9e;
+  cursor: not-allowed;
+}
+
+/* Rest of the CSS remains the same as in the previous file */
+/* ... (keep other styles from the previous CSS file) */
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .user-dashboard {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "header"
+      "notifications"
+      "main";
+    
+    padding: 1rem;
+  }
+
+  .notifications {
+    margin-left: 0;
+    margin-bottom: 1rem;
+    max-width: 100%;
+  }
+
+  .companies-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Existing CSS remains the same, with this addition/modification */
+.user-dashboard {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: 
+    "header notifications"
+    "main notifications"
+    "button notifications";
+}
+
+/* Log Communication Button */
+.log-communication-btn {
+  grid-area: button;
+  justify-self: center;
+  align-self: center;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color var(--transition-speed) ease;
+  margin-top: 1rem;
+  width: auto;
+}
+
+/* Responsive adjustment for small screens */
+@media screen and (max-width: 768px) {
+  .user-dashboard {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "header"
+      "notifications"
+      "main"
+      "button";
+  }
+}

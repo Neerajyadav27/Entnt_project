@@ -1,6 +1,6 @@
-# Communication Tracker
+# ConnectTrack
 
-Communication Tracker is a React-based web application designed to help businesses manage and track communications with various companies. The application provides features for logging communications, scheduling follow-ups, maintaining a comprehensive company database and also provide notification for over due communication.
+ConnectTrack is a React-based web application designed to help businesses manage and track communications with various companies. The application provides features for logging communications, scheduling follow-ups, maintaining a comprehensive company database and also provide notification for over due communication.
 
 ## Prerequisites
 * Node.js (v16.0.0 or later)
